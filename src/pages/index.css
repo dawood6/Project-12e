@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Pacifico&display=swap");
+body {
+  background-color: #000;
+  font-family: "Julius Sans One", sans-serif;
+  color: #fff;
+}
+body:focus {
+    outline: none;
+}
+.mainCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* for heading */
+.heading {
+  color: #ff00de;
+  text-align: center;
+}
+/* for buttons */
+button {
+  margin: 20px;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+.btn-7 {
+  background: #ff00de;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-7 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-7:before,
+.btn-7:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #ff00de;
+  box-shadow: -7px -7px 20px 0px rgba(0, 0, 0, 0.9),
+    -4px -4px 5px 0px rgba(0, 0, 0, 0.9), 7px 7px 20px 0px rgba(0, 0, 0, 0.2),
+    4px 4px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+.btn-7:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-7:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-7:hover {
+  color: #ba01ff;
+  background: transparent;
+}
+.btn-7:hover:before {
+  height: 100%;
+}
+.btn-7:hover:after {
+  width: 100%;
+}
+.btn-7 span:before,
+.btn-7 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #ff00de;
+  box-shadow: -7px -7px 20px 0px rgba(0, 0, 0, 0.9),
+    -4px -4px 5px 0px rgba(0, 0, 0, 0.9), 7px 7px 20px 0px rgba(0, 0, 0, 0.2),
+    4px 4px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+.btn-7 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-7 span:after {
+  height: 2px;
+  width: 0%;
+}
+.btn-7 span:hover:before {
+  height: 100%;
+}
+.btn-7 span:hover:after {
+  width: 100%;
+}
+
+/* sub head */
+.sub-head {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 20px 0 20px 0;
+  font-family: "Pacifico", cursive;
+}
+
+.sub-head a {
+  text-decoration: none;
+  transition: all 0.5s;
+  color: #ba01ff;
+}
+.sub-head a:hover {
+  animation: neon6 1.5s ease-in-out infinite alternate;
+  color: #ffffff;
+}
+@keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de,
+      0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de,
+      0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+}
+/* for creating lolly page */
+.lollyFormDiv {
+  display: flex;
+  justify-content: space-evenly;
+}
+.lollyColor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.lolyColorChanger input {
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    border-color: black;
+}
+
+.lolyColorChanger input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.lolyColorChanger input::-webkit-color-swatch {
+  border: none;
+  border-radius: 100%;
+}
+/* form */
+ form {
+     display: flex;
+     flex-direction: column;
+ }
+ form input ,textarea {
+     border-top: none;
+     border-left: none;
+     border-right: none;
+     border-color:  #ff00de;
+     background-color: black;
+     color: #ffff;
+     padding: 10px;
+ }
+ input:focus, textarea:focus {
+     outline: none;
+ }
+ /* result card */
+ .resultCard {
+     text-align: center;
+     font-weight: bold;
+     background-color: #fff;
+     color: black;
+     padding: 10px;
+ }
