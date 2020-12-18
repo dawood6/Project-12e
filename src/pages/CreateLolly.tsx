@@ -68,17 +68,6 @@ const CreateLolly = () => {
 
         },
     });
-    useEffect(() => {
-        async function runHook() {
-            const response = await fetch("https://api.netlify.com/build_hooks/5fdcff299e80821bd88c3c9e", {
-                method: "POST",
-            });
-
-        }
-        runHook();
-
-    }, [data])
-
 
     return (
         <div className="createLolly">

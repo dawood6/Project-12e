@@ -66,7 +66,6 @@ const resolvers = {
       _,
       { colorOne, colorTwo, colorThree, sender, reciever, message }
     ) => {
-      console.log(colorOne, colorTwo, colorThree, sender, reciever, message)
       const result = await client.query(
         q.Create(q.Collection("virtualLolly"), {
           data: {
@@ -80,7 +79,7 @@ const resolvers = {
           },
         })
       )
-
+      const rebuild = await axios.post(process.env.HOOK)
       return result.data
     },
   },
