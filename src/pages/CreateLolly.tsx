@@ -6,7 +6,7 @@ import * as Yup from 'yup'
 import { useMutation } from '@apollo/client'
 import gql from "graphql-tag"
 import Result from "../components/Result"
-
+import axios from 'axios'
 const ADD_LOLLY = gql`
     mutation addLolly($colorOne: String!, 
         $colorTwo: String!,
@@ -57,6 +57,7 @@ const CreateLolly = () => {
                     message: values.message
                 }
             })
+            const rebuyid =  axios.post('https://api.netlify.com/build_hooks/5fdcff299e80821bd88c3c9e')
 
             resetForm({
                 values: {
