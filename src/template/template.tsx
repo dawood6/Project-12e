@@ -9,7 +9,6 @@ const Template = ({ pageContext: { colorOne, colorTwo, colorThree, reciever, sen
         <div>
             <Header />
             <div className="lollyFormDiv">
-
                 <div>
                     <Lolly top={colorOne} middle={colorTwo} bottom={colorThree} />
                 </div>
