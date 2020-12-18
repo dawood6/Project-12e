@@ -22,15 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `lolly/${node.link}`,
       component: path.resolve("./src/template/template.tsx"),
-      context: {
-        colorOne: node.colorOne,
-        colorTwo: node.colorTwo,
-        colorThree: node.colorThree,
-        link: node.link,
-        message: node.message,
-        sender: node.sender,
-        reciever: node.reciever,
-      },
+      context: node
     });
   });
 };
@@ -39,9 +31,6 @@ exports.onCreatePage = async ({ page, actions }) => {
 
   if (page.path.match(/^\/lolly/)) {
     page.matchPath = "/lolly/*";
-
-    // Update the page.
-
     createPage(page);
   }
 };
