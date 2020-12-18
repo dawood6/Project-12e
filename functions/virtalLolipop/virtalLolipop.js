@@ -80,7 +80,13 @@ const resolvers = {
           },
         })
       );
-      const rebuild = await axios.post(process.env.HOOK);
+      axios.post(process.env.HOOK)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
       return result.data;
     },
   },
