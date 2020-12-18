@@ -6,7 +6,7 @@ module.exports = {
       options: {
         typeName: "GCMS",
         fieldName: "get_lollies",
-        url: "https://virtualLolly-dawood/.netlify/functions/lollies",
+        url: "https://virtualLolly-dawood/.netlify/functions/virtalLolipop",
       },
     },
   ],
