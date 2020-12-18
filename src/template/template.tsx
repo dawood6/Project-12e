@@ -12,7 +12,6 @@ const Template = ({ pageContext: { colorOne, colorTwo, colorThree, reciever, sen
                 <div>
                     <Lolly top={colorOne} middle={colorTwo} bottom={colorThree} />
                 </div>
-
                 <Result link={link} reciever={reciever} sender={sender} message={message} />
             </div>
         </div>
