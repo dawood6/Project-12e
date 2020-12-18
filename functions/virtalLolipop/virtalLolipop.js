@@ -1,8 +1,8 @@
-const { ApolloServer, gql } = require("apollo-server-lambda");
+const { ApolloServer, gql } = require("apollo-server-lambda")
 const faunadb = require("faunadb"),
-  q = faunadb.query;
-const shortid = require("shortid");
-const axios = require("axios");
+  q = faunadb.query
+const shortid = require("shortid")
+const axios = require("axios")
 
 const typeDefs = gql`
   type Query {
@@ -28,10 +28,10 @@ const typeDefs = gql`
       message: String!
     ): lolly
   }
-`;
+`
 var client = new faunadb.Client({
   secret: process.env.FAUNADB_ADMIN_SECRET,
-});
+})
 
 const resolvers = {
   Query: {
@@ -40,12 +40,12 @@ const resolvers = {
         const result = await client.query(
           q.Map(
             q.Paginate(q.Match(q.Index("lolly"))),
-            q.Lambda((x) => q.Get(x))
+            q.Lambda(x => q.Get(x))
           )
-        );
-        console.log(result.data);
+        )
+        console.log(result.data)
 
-        return result.data.map((d) => {
+        return result.data.map(d => {
           return {
             id: d.ts,
             colorOne: d.data.colorOne,
@@ -55,10 +55,10 @@ const resolvers = {
             sender: d.data.sender,
             message: d.data.message,
             link: d.data.link,
-          };
-        });
+          }
+        })
       } catch (err) {
-        console.log(err);
+        console.log(err)
       }
     },
   },
@@ -79,22 +79,16 @@ const resolvers = {
             link: shortid.generate(),
           },
         })
-      );
-      axios.post(process.env.HOOK)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-      return result.data;
+      )
+       await axios.post(process.env.HOOK)
+      return result.data
     },
   },
-};
+}
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-});
+})
 
-exports.handler = server.createHandler();
+exports.handler = server.createHandler()
