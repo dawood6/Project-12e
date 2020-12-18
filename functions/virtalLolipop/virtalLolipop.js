@@ -2,6 +2,7 @@ const { ApolloServer, gql } = require("apollo-server-lambda")
 const faunadb = require("faunadb"),
   q = faunadb.query
 const shortid = require("shortid")
+const axios = require("axios")
 
 const typeDefs = gql`
   type Query {
