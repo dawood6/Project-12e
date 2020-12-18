@@ -57,7 +57,6 @@ const CreateLolly = () => {
                     message: values.message
                 }
             })
-            const rebuyid =  axios.post('https://api.netlify.com/build_hooks/5fdcff299e80821bd88c3c9e')
 
             resetForm({
                 values: {
