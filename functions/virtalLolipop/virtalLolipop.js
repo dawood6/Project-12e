@@ -1,9 +1,9 @@
 const { ApolloServer, gql } = require("apollo-server-lambda")
 const faunadb = require("faunadb"),
   q = faunadb.query
-const shortid = require("shortid")
-const axios = require("axios")
-
+  const shortid = require("shortid")
+  const axios = require("axios")
+  
 const typeDefs = gql`
   type Query {
     getLollies: [lolly]
@@ -67,6 +67,7 @@ const resolvers = {
       _,
       { colorOne, colorTwo, colorThree, sender, reciever, message }
     ) => {
+      console.log(colorOne, colorTwo, colorThree, sender, reciever, message)
       const result = await client.query(
         q.Create(q.Collection("virtualLolly"), {
           data: {
@@ -80,7 +81,7 @@ const resolvers = {
           },
         })
       )
-       const build = await axios.post(process.env.HOOK)
+      const build = await axios.post(process.env.HOOK)
       return result.data
     },
   },
