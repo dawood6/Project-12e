@@ -62,7 +62,6 @@ const resolvers = {
       }
     },
   },
-  
   Mutation: {
     addLolly: async (
       _,
@@ -81,7 +80,7 @@ const resolvers = {
           },
         })
       )
-       const rebuild = await axios.post(process.env.HOOK)
+       const build = await axios.post(process.env.HOOK)
       return result.data
     },
   },
