@@ -40,7 +40,6 @@ const CreateLolly = () => {
     const [colorTwo, setColorTwo] = useState("#e95946")
     const [colorThree, setColorThree] = useState("#deaa43")
     const [addLolly, { data }] = useMutation(ADD_LOLLY);
-
     const formik = useFormik({
         initialValues: {
             reciever: '',

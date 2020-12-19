@@ -7,6 +7,7 @@ const axios = require("axios")
 const typeDefs = gql`
   type Query {
     getLollies: [lolly]
+    getByLink(Link: String!): Lolly
   }
   type lolly {
     id: ID!
@@ -61,7 +62,22 @@ const resolvers = {
         console.log(err)
       }
     },
-  },
+
+  getByLink: async (_, { Link }) => {
+    try {
+      const result = await client.query(
+        q.Get(q.Match(q.Index("Link"), Link))
+      );
+      // console.log(result.data)
+      // console.log("imrunnig")
+      return result.data
+
+    } catch (e) {
+      return error.toString();
+    }
+  }
+
+},
   Mutation: {
     addLolly: async (
       _,
